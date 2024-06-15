@@ -1,17 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=8 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Texture2D" uid="uid://k7fhmawjs6lo" path="res://assets/textures/Bricks/Bricks089_1K-JPG_NormalGL.jpg" id="2_wjegy"]
 [ext_resource type="Texture2D" uid="uid://b5k1p1bhpo5ek" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Roughness.jpg" id="3_tvkgj"]
-[ext_resource type="PackedScene" uid="uid://ca5128rutsgmm" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01.gltf" id="4_lqe7h"]
-[ext_resource type="PackedScene" uid="uid://2g5ybba7j4xf" path="res://assets/models/MedievalAssets/Wall_Stone01/Wall_Stone01.gltf" id="5_6ygll"]
-[ext_resource type="PackedScene" uid="uid://d0n8kpuq6fio1" path="res://assets/models/MedievalAssets/Graveyard03/Graveyard03.gltf" id="7_iex0k"]
-[ext_resource type="PackedScene" uid="uid://dls7hikqsfie7" path="res://assets/models/MedievalAssets/Barrel03/Barrel03.gltf" id="8_dt8kg"]
-[ext_resource type="PackedScene" uid="uid://lw37n0kydn3j" path="res://assets/models/MedievalAssets/Bench01/Bench01.gltf" id="9_apjho"]
-[ext_resource type="PackedScene" uid="uid://ccurx5fwrbcwp" path="res://assets/models/MedievalAssets/Box01/Box01.gltf" id="10_ilmjj"]
-[ext_resource type="PackedScene" uid="uid://ba173t3gr5k07" path="res://assets/models/MedievalAssets/Brazier/Brazier.gltf" id="11_p1ost"]
-[ext_resource type="PackedScene" uid="uid://ct8q8shxqmm7c" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01.gltf" id="11_sj4fl"]
-[ext_resource type="PackedScene" uid="uid://dpr5gelu67c5g" path="res://player.tscn" id="12_ukhp4"]
+[ext_resource type="MeshLibrary" uid="uid://beysr8y0v7is5" path="res://tiles.tres" id="5_p4wb6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wfknt"]
 size = Vector3(50, 1, 50)
@@ -27,8 +19,6 @@ uv1_scale = Vector3(65, 65, 65)
 material = SubResource("StandardMaterial3D_u222s")
 size = Vector3(50, 1, 50)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0jgx0"]
-
 [node name="MedievalTown1" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -43,36 +33,9 @@ shape = SubResource("BoxShape3D_wfknt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_uo61a")
 
-[node name="temp player bob" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59826, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_0jgx0")
-
-[node name="Stylized Hut012" parent="." instance=ExtResource("4_lqe7h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40447, 0.5, -0.924496)
-
-[node name="Wall_Stone012" parent="." instance=ExtResource("5_6ygll")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.006, 0.5, -6.82837)
-
-[node name="Graveyard032" parent="." instance=ExtResource("7_iex0k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76524, 0.499999, 4.35395)
-
-[node name="Barrel032" parent="." instance=ExtResource("8_dt8kg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7225, 0.5, -4.55628)
-
-[node name="Barrel033" parent="." instance=ExtResource("8_dt8kg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691172, 0.5, -5.13563)
-
-[node name="Bench012" parent="." instance=ExtResource("9_apjho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62329, 0.5, -6.17638)
-
-[node name="Box012" parent="." instance=ExtResource("10_ilmjj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7848, 0.543355, -11.8856)
-
-[node name="Brazier2" parent="." instance=ExtResource("11_p1ost")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79484, 0.5, -12.8068)
-
-[node name="Streetlamp012" parent="." instance=ExtResource("11_sj4fl")]
-transform = Transform3D(-0.942455, 0, 0.334333, 0, 1, 0, -0.334333, 0, -0.942455, -3.4328, 0.5, 3.49689)
-
-[node name="Player" parent="." instance=ExtResource("12_ukhp4")]
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("5_p4wb6")
+cell_size = Vector3(0.5, 0.5, 0.5)
+data = {
+"cells": PackedInt32Array(13, 65519, 0, 27, 65515, 15, 19, 65501, 16, 4, 65502, 16, 65531, 65512, 1441808, 65530, 65532, 1441808, 7, 3, 655376, 26, 5, 655376, 2, 65508, 655369, 9, 65506, 655369, 16, 65505, 655369, 1, 65529, 655369, 11, 65532, 655369, 1, 65519, 655369, 3, 65513, 655363, 12, 65531, 655363)
+}
