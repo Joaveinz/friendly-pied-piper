@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://oa1vad5os5pc"]
+
+[ext_resource type="PackedScene" uid="uid://cxk3lnnywtkwa" path="res://assets/rat_animated/scene.gltf" id="1_xqh53"]
+
+[sub_resource type="GDScript" id="GDScript_gyof7"]
+script/source = "extends CharacterBody3D
+
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1j0o8"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8te10"]
+xfade_time = 0.4
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sa04f"]
+states/Run/node = SubResource("AnimationNodeAnimation_1j0o8")
+states/Run/position = Vector2(665, 74)
+states/Start/position = Vector2(373, 74)
+transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_8te10")]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dvu42"]
+radius = 0.1
+height = 0.75
+
+[node name="Rat" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.412096)
+script = SubResource("GDScript_gyof7")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_xqh53")]
+
+[node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
+bones/2/rotation = Quaternion(0.709754, -0.113967, 0.690992, -0.076103)
+bones/3/rotation = Quaternion(-0.113386, 0.0336774, 0.00394688, 0.992972)
+bones/4/rotation = Quaternion(-0.0677954, 0.0249922, 0.00213759, 0.997384)
+bones/5/rotation = Quaternion(-0.176821, 0.0277188, 0.00389427, 0.983845)
+bones/7/rotation = Quaternion(-5.3239e-08, 4.49957e-07, 0.284849, 0.958572)
+bones/8/rotation = Quaternion(-0.107456, -0.698894, -0.107456, 0.698895)
+bones/9/rotation = Quaternion(-0.125043, -6.20856e-07, -1.52031e-07, 0.992151)
+bones/11/rotation = Quaternion(0.037817, 0.706094, 0.037817, 0.706096)
+bones/13/rotation = Quaternion(-0.0298168, 0.031734, 0.276607, 0.959996)
+bones/15/rotation = Quaternion(-0.0422072, -0.0946207, 0.908347, 0.405181)
+bones/17/rotation = Quaternion(0.039782, 0.0177054, 0.406216, 0.912739)
+bones/19/rotation = Quaternion(0.0398359, 0.0956432, 0.91816, 0.382423)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Sketchfab_Scene")
+tree_root = SubResource("AnimationNodeStateMachine_sa04f")
+anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.190809, -0.981627, 0, 0.981627, -0.190809, 0, 0, 0, 1, -0.11, 0.09, 0.02)
+shape = SubResource("CapsuleShape3D_dvu42")
+
+[editable path="Sketchfab_Scene"]
