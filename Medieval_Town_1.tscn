@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=17 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Texture2D" uid="uid://k7fhmawjs6lo" path="res://assets/textures/Bricks/Bricks089_1K-JPG_NormalGL.jpg" id="2_wjegy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccurx5fwrbcwp" path="res://assets/models/MedievalAssets/Box01/Box01.gltf" id="10_ilmjj"]
 [ext_resource type="PackedScene" uid="uid://ba173t3gr5k07" path="res://assets/models/MedievalAssets/Brazier/Brazier.gltf" id="11_p1ost"]
 [ext_resource type="PackedScene" uid="uid://ct8q8shxqmm7c" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01.gltf" id="11_sj4fl"]
+[ext_resource type="PackedScene" uid="uid://dpr5gelu67c5g" path="res://player.tscn" id="12_ukhp4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wfknt"]
 size = Vector3(50, 1, 50)
@@ -44,6 +45,7 @@ mesh = SubResource("BoxMesh_uo61a")
 
 [node name="temp player bob" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59826, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_0jgx0")
 
 [node name="Stylized Hut012" parent="." instance=ExtResource("4_lqe7h")]
@@ -72,3 +74,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79484, 0.5, -12.8068)
 
 [node name="Streetlamp012" parent="." instance=ExtResource("11_sj4fl")]
 transform = Transform3D(-0.942455, 0, 0.334333, 0, 1, 0, -0.334333, 0, -0.942455, -3.4328, 0.5, 3.49689)
+
+[node name="Player" parent="." instance=ExtResource("12_ukhp4")]
