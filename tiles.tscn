@@ -2286,427 +2286,357 @@ shadow_mesh = SubResource("ArrayMesh_qj03w")
 
 [node name="Tiles" type="Node3D"]
 
-[node name="Barrel03" type="Node3D" parent="."]
+[node name="Barrel04" type="Node3D" parent="."]
 
-[node name="Barrel032" type="Node3D" parent="Barrel03"]
-
-[node name="Barrel03" type="Node3D" parent="Barrel03/Barrel032"]
-
-[node name="SM_PROP_barrel_01" type="MeshInstance3D" parent="Barrel03/Barrel032/Barrel03"]
+[node name="SM_PROP_barrel_01" type="MeshInstance3D" parent="Barrel04"]
 mesh = SubResource("ArrayMesh_1el4r")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Barrel03/Barrel032/Barrel03/SM_PROP_barrel_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel04/SM_PROP_barrel_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel03/Barrel032/Barrel03/SM_PROP_barrel_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel04/SM_PROP_barrel_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_1d6n5")
 
-[node name="SM_PROP_barrel_01_1" type="MeshInstance3D" parent="Barrel03/Barrel032/Barrel03"]
+[node name="SM_PROP_barrel_01_1" type="MeshInstance3D" parent="Barrel04"]
 mesh = SubResource("ArrayMesh_vjusy")
 skeleton = NodePath("")
 
-[node name="Bench01" type="Node3D" parent="."]
+[node name="Bench012" type="Node3D" parent="."]
 
-[node name="Bench012" type="Node3D" parent="Bench01"]
-
-[node name="Bench01" type="MeshInstance3D" parent="Bench01/Bench012"]
+[node name="Bench01" type="MeshInstance3D" parent="Bench012"]
 mesh = SubResource("ArrayMesh_qie17")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bench01/Bench012/Bench01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bench012/Bench01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench01/Bench012/Bench01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench012/Bench01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_el8d4")
 
-[node name="Box01" type="Node3D" parent="."]
+[node name="Box02" type="Node3D" parent="."]
 
-[node name="Box012" type="Node3D" parent="Box01"]
-
-[node name="Box01" type="Node3D" parent="Box01/Box012"]
-
-[node name="SM_PROP_box_01" type="MeshInstance3D" parent="Box01/Box012/Box01"]
+[node name="SM_PROP_box_01" type="MeshInstance3D" parent="Box02"]
 mesh = SubResource("ArrayMesh_8gnep")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Box01/Box012/Box01/SM_PROP_box_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Box02/SM_PROP_box_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box01/Box012/Box01/SM_PROP_box_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box02/SM_PROP_box_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_06eal")
 
-[node name="SM_PROP_box_01_1" type="MeshInstance3D" parent="Box01/Box012/Box01"]
+[node name="SM_PROP_box_01_1" type="MeshInstance3D" parent="Box02"]
 mesh = SubResource("ArrayMesh_xu6xk")
 skeleton = NodePath("")
 
-[node name="Brazier" type="Node3D" parent="."]
+[node name="Brazier2" type="Node3D" parent="."]
 
-[node name="Brazier2" type="Node3D" parent="Brazier"]
-
-[node name="Brazier" type="Node3D" parent="Brazier/Brazier2"]
-
-[node name="SM_PROP_brazier_01" type="MeshInstance3D" parent="Brazier/Brazier2/Brazier"]
+[node name="SM_PROP_brazier_01" type="MeshInstance3D" parent="Brazier2"]
 mesh = SubResource("ArrayMesh_m8hah")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Brazier/Brazier2/Brazier/SM_PROP_brazier_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Brazier2/SM_PROP_brazier_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Brazier/Brazier2/Brazier/SM_PROP_brazier_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Brazier2/SM_PROP_brazier_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_pot38")
 
-[node name="SM_PROP_brazier_01_1" type="MeshInstance3D" parent="Brazier/Brazier2/Brazier"]
+[node name="SM_PROP_brazier_01_1" type="MeshInstance3D" parent="Brazier2"]
 mesh = SubResource("ArrayMesh_x3eak")
 skeleton = NodePath("")
 
-[node name="SM_PROP_brazier_01_2" type="MeshInstance3D" parent="Brazier/Brazier2/Brazier"]
+[node name="SM_PROP_brazier_01_2" type="MeshInstance3D" parent="Brazier2"]
 mesh = SubResource("ArrayMesh_6l485")
 skeleton = NodePath("")
 
-[node name="Bridge_Wood01" type="Node3D" parent="."]
+[node name="Bridge_Wood02" type="Node3D" parent="."]
 
-[node name="Bridge_Wood012" type="Node3D" parent="Bridge_Wood01"]
-
-[node name="Bridge_Wood01" type="Node3D" parent="Bridge_Wood01/Bridge_Wood012"]
-
-[node name="SM_PROP_bridge_wood_01001" type="MeshInstance3D" parent="Bridge_Wood01/Bridge_Wood012/Bridge_Wood01"]
+[node name="SM_PROP_bridge_wood_01001" type="MeshInstance3D" parent="Bridge_Wood02"]
 mesh = SubResource("ArrayMesh_xtumo")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bridge_Wood01/Bridge_Wood012/Bridge_Wood01/SM_PROP_bridge_wood_01001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridge_Wood02/SM_PROP_bridge_wood_01001"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge_Wood01/Bridge_Wood012/Bridge_Wood01/SM_PROP_bridge_wood_01001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge_Wood02/SM_PROP_bridge_wood_01001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qk8yo")
 
-[node name="SM_PROP_bridge_wood_01001_1" type="MeshInstance3D" parent="Bridge_Wood01/Bridge_Wood012/Bridge_Wood01"]
+[node name="SM_PROP_bridge_wood_01001_1" type="MeshInstance3D" parent="Bridge_Wood02"]
 mesh = SubResource("ArrayMesh_i446p")
 skeleton = NodePath("")
 
-[node name="FenceWoodDoor_gate" type="Node3D" parent="."]
+[node name="FenceWoodDoor_gate2" type="Node3D" parent="."]
 
-[node name="FenceWoodDoor_gate2" type="Node3D" parent="FenceWoodDoor_gate"]
-
-[node name="FenceWoodDoor_gate" type="Node3D" parent="FenceWoodDoor_gate/FenceWoodDoor_gate2"]
-
-[node name="SM_PROP_fence_door_gate" type="MeshInstance3D" parent="FenceWoodDoor_gate/FenceWoodDoor_gate2/FenceWoodDoor_gate"]
+[node name="SM_PROP_fence_door_gate" type="MeshInstance3D" parent="FenceWoodDoor_gate2"]
 mesh = SubResource("ArrayMesh_rt2u2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_gate/FenceWoodDoor_gate2/FenceWoodDoor_gate/SM_PROP_fence_door_gate"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_gate2/SM_PROP_fence_door_gate"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_gate/FenceWoodDoor_gate2/FenceWoodDoor_gate/SM_PROP_fence_door_gate/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_gate2/SM_PROP_fence_door_gate/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_7gnnq")
 
-[node name="SM_PROP_fence_door_gate_1" type="MeshInstance3D" parent="FenceWoodDoor_gate/FenceWoodDoor_gate2/FenceWoodDoor_gate"]
+[node name="SM_PROP_fence_door_gate_1" type="MeshInstance3D" parent="FenceWoodDoor_gate2"]
 mesh = SubResource("ArrayMesh_jkihn")
 skeleton = NodePath("")
 
-[node name="FenceWoodDoor_H02" type="Node3D" parent="."]
+[node name="FenceWoodDoor_H05" type="Node3D" parent="."]
 
-[node name="FenceWoodDoor_H022" type="Node3D" parent="FenceWoodDoor_H02"]
-
-[node name="FenceWoodDoor_H02" type="Node3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022"]
-
-[node name="SM_PROP_fence_v02_03" type="MeshInstance3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022/FenceWoodDoor_H02"]
+[node name="SM_PROP_fence_v02_03" type="MeshInstance3D" parent="FenceWoodDoor_H05"]
 mesh = SubResource("ArrayMesh_wwmoj")
 skeleton = NodePath("")
 
-[node name="SM_PROP_fence_v02_03_1" type="MeshInstance3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022/FenceWoodDoor_H02"]
+[node name="SM_PROP_fence_v02_03_1" type="MeshInstance3D" parent="FenceWoodDoor_H05"]
 mesh = SubResource("ArrayMesh_mdyp0")
 skeleton = NodePath("")
 
-[node name="SM_PROP_fence_v02_03_2" type="MeshInstance3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022/FenceWoodDoor_H02"]
+[node name="SM_PROP_fence_v02_03_2" type="MeshInstance3D" parent="FenceWoodDoor_H05"]
 mesh = SubResource("ArrayMesh_fmydu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022/FenceWoodDoor_H02/SM_PROP_fence_v02_03_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H05/SM_PROP_fence_v02_03_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H02/FenceWoodDoor_H022/FenceWoodDoor_H02/SM_PROP_fence_v02_03_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H05/SM_PROP_fence_v02_03_2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_d4xjg")
 
-[node name="FenceWoodDoor_H03" type="Node3D" parent="."]
+[node name="FenceWoodDoor_H06" type="Node3D" parent="."]
 
-[node name="FenceWoodDoor_H032" type="Node3D" parent="FenceWoodDoor_H03"]
-
-[node name="FenceWoodDoor_H03" type="Node3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032"]
-
-[node name="SM_PROP_fence_v03_01" type="MeshInstance3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032/FenceWoodDoor_H03"]
+[node name="SM_PROP_fence_v03_01" type="MeshInstance3D" parent="FenceWoodDoor_H06"]
 mesh = SubResource("ArrayMesh_ivwh4")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032/FenceWoodDoor_H03/SM_PROP_fence_v03_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H06/SM_PROP_fence_v03_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H06/SM_PROP_fence_v03_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_nkrdf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032/FenceWoodDoor_H03/SM_PROP_fence_v03_01"]
-
-[node name="SM_PROP_fence_v03_01_1" type="MeshInstance3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032/FenceWoodDoor_H03"]
+[node name="SM_PROP_fence_v03_01_1" type="MeshInstance3D" parent="FenceWoodDoor_H06"]
 mesh = SubResource("ArrayMesh_ha37i")
 skeleton = NodePath("")
 
-[node name="SM_PROP_fence_v03_01_2" type="MeshInstance3D" parent="FenceWoodDoor_H03/FenceWoodDoor_H032/FenceWoodDoor_H03"]
+[node name="SM_PROP_fence_v03_01_2" type="MeshInstance3D" parent="FenceWoodDoor_H06"]
 mesh = SubResource("ArrayMesh_m0ufu")
 skeleton = NodePath("")
 
-[node name="FenceWoodDoor_H04" type="Node3D" parent="."]
+[node name="FenceWoodDoor_H07" type="Node3D" parent="."]
 
-[node name="FenceWoodDoor_H042" type="Node3D" parent="FenceWoodDoor_H04"]
-
-[node name="FenceWoodDoor_H04" type="Node3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042"]
-
-[node name="SM_PROP_fence_v03_02" type="MeshInstance3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042/FenceWoodDoor_H04"]
+[node name="SM_PROP_fence_v03_02" type="MeshInstance3D" parent="FenceWoodDoor_H07"]
 mesh = SubResource("ArrayMesh_1pubv")
 skeleton = NodePath("")
 
-[node name="SM_PROP_fence_v03_02_1" type="MeshInstance3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042/FenceWoodDoor_H04"]
+[node name="SM_PROP_fence_v03_02_1" type="MeshInstance3D" parent="FenceWoodDoor_H07"]
 mesh = SubResource("ArrayMesh_mvowr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042/FenceWoodDoor_H04/SM_PROP_fence_v03_02_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceWoodDoor_H07/SM_PROP_fence_v03_02_1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042/FenceWoodDoor_H04/SM_PROP_fence_v03_02_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWoodDoor_H07/SM_PROP_fence_v03_02_1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clrw0")
 
-[node name="SM_PROP_fence_v03_02_2" type="MeshInstance3D" parent="FenceWoodDoor_H04/FenceWoodDoor_H042/FenceWoodDoor_H04"]
+[node name="SM_PROP_fence_v03_02_2" type="MeshInstance3D" parent="FenceWoodDoor_H07"]
 mesh = SubResource("ArrayMesh_x43js")
 skeleton = NodePath("")
 
-[node name="FenceWood_H01" type="Node3D" parent="."]
+[node name="FenceWood_H02" type="Node3D" parent="."]
 
-[node name="FenceWood_H012" type="Node3D" parent="FenceWood_H01"]
-
-[node name="FenceWood_H01" type="Node3D" parent="FenceWood_H01/FenceWood_H012"]
-
-[node name="SM_PROP_fence_v02_04" type="MeshInstance3D" parent="FenceWood_H01/FenceWood_H012/FenceWood_H01"]
+[node name="SM_PROP_fence_v02_04" type="MeshInstance3D" parent="FenceWood_H02"]
 mesh = SubResource("ArrayMesh_co6sy")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWood_H01/FenceWood_H012/FenceWood_H01/SM_PROP_fence_v02_04"]
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceWood_H02/SM_PROP_fence_v02_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceWood_H02/SM_PROP_fence_v02_04/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_x41rd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FenceWood_H01/FenceWood_H012/FenceWood_H01/SM_PROP_fence_v02_04"]
-
-[node name="SM_PROP_fence_v02_04_1" type="MeshInstance3D" parent="FenceWood_H01/FenceWood_H012/FenceWood_H01"]
+[node name="SM_PROP_fence_v02_04_1" type="MeshInstance3D" parent="FenceWood_H02"]
 mesh = SubResource("ArrayMesh_dshsw")
 skeleton = NodePath("")
 
-[node name="SM_PROP_fence_v02_04_2" type="MeshInstance3D" parent="FenceWood_H01/FenceWood_H012/FenceWood_H01"]
+[node name="SM_PROP_fence_v02_04_2" type="MeshInstance3D" parent="FenceWood_H02"]
 mesh = SubResource("ArrayMesh_m76n7")
 skeleton = NodePath("")
 
-[node name="Foundation_Wood_01" type="Node3D" parent="."]
+[node name="Foundation_Wood_012" type="Node3D" parent="."]
 
-[node name="Foundation_Wood_012" type="Node3D" parent="Foundation_Wood_01"]
-
-[node name="Foundation_Wood_01" type="MeshInstance3D" parent="Foundation_Wood_01/Foundation_Wood_012"]
+[node name="Foundation_Wood_01" type="MeshInstance3D" parent="Foundation_Wood_012"]
 mesh = SubResource("ArrayMesh_nxb14")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foundation_Wood_01/Foundation_Wood_012/Foundation_Wood_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Foundation_Wood_012/Foundation_Wood_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foundation_Wood_01/Foundation_Wood_012/Foundation_Wood_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Foundation_Wood_012/Foundation_Wood_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ldhlb")
 
-[node name="Railing02" type="Node3D" parent="."]
+[node name="Railing04" type="Node3D" parent="."]
 
-[node name="Railing022" type="Node3D" parent="Railing02"]
-
-[node name="Railing02" type="Node3D" parent="Railing02/Railing022"]
-
-[node name="SM_PROP_railing_v03_01" type="MeshInstance3D" parent="Railing02/Railing022/Railing02"]
+[node name="SM_PROP_railing_v03_01" type="MeshInstance3D" parent="Railing04"]
 mesh = SubResource("ArrayMesh_juhru")
 skeleton = NodePath("")
 
-[node name="SM_PROP_railing_v03_01_1" type="MeshInstance3D" parent="Railing02/Railing022/Railing02"]
+[node name="SM_PROP_railing_v03_01_1" type="MeshInstance3D" parent="Railing04"]
 mesh = SubResource("ArrayMesh_dlmh7")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Railing02/Railing022/Railing02/SM_PROP_railing_v03_01_1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Railing04/SM_PROP_railing_v03_01_1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Railing04/SM_PROP_railing_v03_01_1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_jqjg1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Railing02/Railing022/Railing02/SM_PROP_railing_v03_01_1"]
+[node name="Railing032" type="Node3D" parent="."]
 
-[node name="Railing03" type="Node3D" parent="."]
-
-[node name="Railing032" type="Node3D" parent="Railing03"]
-
-[node name="Railing03" type="MeshInstance3D" parent="Railing03/Railing032"]
+[node name="Railing03" type="MeshInstance3D" parent="Railing032"]
 mesh = SubResource("ArrayMesh_k2oqc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Railing03/Railing032/Railing03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Railing032/Railing03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Railing03/Railing032/Railing03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Railing032/Railing03/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_okxeh")
 
-[node name="Rock02" type="Node3D" parent="."]
+[node name="Rock022" type="Node3D" parent="."]
 
-[node name="Rock022" type="Node3D" parent="Rock02"]
-
-[node name="Rock02" type="MeshInstance3D" parent="Rock02/Rock022"]
+[node name="Rock02" type="MeshInstance3D" parent="Rock022"]
 mesh = SubResource("ArrayMesh_afn01")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rock02/Rock022/Rock02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock022/Rock02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock02/Rock022/Rock02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock022/Rock02/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_543w2")
 
-[node name="Graveyard03" type="Node3D" parent="."]
+[node name="Graveyard032" type="Node3D" parent="."]
 
-[node name="Graveyard032" type="Node3D" parent="Graveyard03"]
-
-[node name="Graveyard03" type="MeshInstance3D" parent="Graveyard03/Graveyard032"]
+[node name="Graveyard03" type="MeshInstance3D" parent="Graveyard032"]
 mesh = SubResource("ArrayMesh_urw76")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Graveyard03/Graveyard032/Graveyard03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Graveyard032/Graveyard03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Graveyard03/Graveyard032/Graveyard03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Graveyard032/Graveyard03/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k4mm7")
 
-[node name="Rock03" type="Node3D" parent="."]
+[node name="Rock032" type="Node3D" parent="."]
 
-[node name="Rock032" type="Node3D" parent="Rock03"]
-
-[node name="Rock03" type="MeshInstance3D" parent="Rock03/Rock032"]
+[node name="Rock03" type="MeshInstance3D" parent="Rock032"]
 mesh = SubResource("ArrayMesh_bpbx8")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rock03/Rock032/Rock03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock032/Rock03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock03/Rock032/Rock03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock032/Rock03/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qbr4q")
 
-[node name="Sign01" type="Node3D" parent="."]
+[node name="Sign02" type="Node3D" parent="."]
 
-[node name="Sign012" type="Node3D" parent="Sign01"]
-
-[node name="Sign01" type="Node3D" parent="Sign01/Sign012"]
-
-[node name="Cube003" type="MeshInstance3D" parent="Sign01/Sign012/Sign01"]
+[node name="Cube003" type="MeshInstance3D" parent="Sign02"]
 mesh = SubResource("ArrayMesh_jm3l7")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sign01/Sign012/Sign01/Cube003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sign02/Cube003"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sign01/Sign012/Sign01/Cube003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sign02/Cube003/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_smure")
 
-[node name="Cube003_1" type="MeshInstance3D" parent="Sign01/Sign012/Sign01"]
+[node name="Cube003_1" type="MeshInstance3D" parent="Sign02"]
 mesh = SubResource("ArrayMesh_wj3mp")
 skeleton = NodePath("")
 
-[node name="Streetlamp01" type="Node3D" parent="."]
+[node name="Streetlamp02" type="Node3D" parent="."]
 
-[node name="Streetlamp012" type="Node3D" parent="Streetlamp01"]
-
-[node name="Streetlamp01" type="Node3D" parent="Streetlamp01/Streetlamp012"]
-
-[node name="SM_PROP_streetlamp_v01_01" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_r873r")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Streetlamp01/Streetlamp012/Streetlamp01/SM_PROP_streetlamp_v01_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Streetlamp02/SM_PROP_streetlamp_v01_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Streetlamp01/Streetlamp012/Streetlamp01/SM_PROP_streetlamp_v01_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Streetlamp02/SM_PROP_streetlamp_v01_01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_u47yj")
 
-[node name="SM_PROP_streetlamp_v01_01_1" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_1" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_nkq44")
 skeleton = NodePath("")
 
-[node name="SM_PROP_streetlamp_v01_01_2" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_2" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_5ujjc")
 skeleton = NodePath("")
 
-[node name="SM_PROP_streetlamp_v01_01_3" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_3" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_23onx")
 skeleton = NodePath("")
 
-[node name="SM_PROP_streetlamp_v01_01_4" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_4" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_gd2r1")
 skeleton = NodePath("")
 
-[node name="SM_PROP_streetlamp_v01_01_5" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_5" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_hgymb")
 skeleton = NodePath("")
 
-[node name="SM_PROP_streetlamp_v01_01_6" type="MeshInstance3D" parent="Streetlamp01/Streetlamp012/Streetlamp01"]
+[node name="SM_PROP_streetlamp_v01_01_6" type="MeshInstance3D" parent="Streetlamp02"]
 mesh = SubResource("ArrayMesh_hfqjv")
 skeleton = NodePath("")
 
-[node name="Stylized Hut01" type="Node3D" parent="."]
+[node name="Stylized_Hut01" type="Node3D" parent="."]
 
-[node name="Stylized Hut01" type="Node3D" parent="Stylized Hut01"]
-
-[node name="Stylized_Hut01" type="Node3D" parent="Stylized Hut01/Stylized Hut01"]
-
-[node name="Cube" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_qebf5")
 skeleton = NodePath("")
 
-[node name="Cube_1" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_1" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_jgueh")
 skeleton = NodePath("")
 
-[node name="Cube_2" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_2" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_xu44n")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01/Cube_2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Stylized_Hut01/Cube_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01/Cube_2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stylized_Hut01/Cube_2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yvvq1")
 
-[node name="Cube_3" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_3" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_kam0s")
 skeleton = NodePath("")
 
-[node name="Cube_4" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_4" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_txn7m")
 skeleton = NodePath("")
 
-[node name="Cube_5" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_5" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_85bwn")
 skeleton = NodePath("")
 
-[node name="Cube_6" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_6" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_g8bvg")
 skeleton = NodePath("")
 
-[node name="Cube_7" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_7" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_hq38h")
 skeleton = NodePath("")
 
-[node name="Cube_8" type="MeshInstance3D" parent="Stylized Hut01/Stylized Hut01/Stylized_Hut01"]
+[node name="Cube_8" type="MeshInstance3D" parent="Stylized_Hut01"]
 mesh = SubResource("ArrayMesh_kvt54")
 skeleton = NodePath("")
 
-[node name="Wall_Stone01" type="Node3D" parent="."]
+[node name="Wall_Stone012" type="Node3D" parent="."]
 
-[node name="Wall_Stone012" type="Node3D" parent="Wall_Stone01"]
-
-[node name="Wall_Stone01" type="MeshInstance3D" parent="Wall_Stone01/Wall_Stone012"]
+[node name="Wall_Stone01" type="MeshInstance3D" parent="Wall_Stone012"]
 mesh = SubResource("ArrayMesh_5248r")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Stone01/Wall_Stone012/Wall_Stone01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Stone012/Wall_Stone01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Stone01/Wall_Stone012/Wall_Stone01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Stone012/Wall_Stone01/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dowwr")
 
-[node name="Wooden_Fence" type="Node3D" parent="."]
+[node name="Wooden_Fence2" type="Node3D" parent="."]
 
-[node name="Wooden_Fence2" type="Node3D" parent="Wooden_Fence"]
-
-[node name="Wooden_Fence" type="Node3D" parent="Wooden_Fence/Wooden_Fence2"]
-
-[node name="Cube007" type="MeshInstance3D" parent="Wooden_Fence/Wooden_Fence2/Wooden_Fence"]
+[node name="Cube007" type="MeshInstance3D" parent="Wooden_Fence2"]
 mesh = SubResource("ArrayMesh_qsjuu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wooden_Fence/Wooden_Fence2/Wooden_Fence/Cube007"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wooden_Fence2/Cube007"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wooden_Fence/Wooden_Fence2/Wooden_Fence/Cube007/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wooden_Fence2/Cube007/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_7xmms")
 
-[node name="Cube007_1" type="MeshInstance3D" parent="Wooden_Fence/Wooden_Fence2/Wooden_Fence"]
+[node name="Cube007_1" type="MeshInstance3D" parent="Wooden_Fence2"]
 mesh = SubResource("ArrayMesh_tay0m")
 skeleton = NodePath("")
