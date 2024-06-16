@@ -23,17 +23,22 @@ func _process(delta):
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * SPEED
 	
-	velocity = velocity.move_toward(new_velocity, .25)
+	nav_agent.set_velocity(new_velocity)
 	
 	$Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode.rotation.y = lerp_angle($Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)	
-	
-	move_and_slide()
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
+
+
+func _on_navigation_agent_3d_velocity_computed(safe_velocity):
+	velocity = velocity.move_toward(safe_velocity, .25)
+	move_and_slide()
 "
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1j0o8"]
+resource_local_to_scene = true
+resource_name = "Running"
 animation = &"Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8te10"]
@@ -42,7 +47,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sa04f"]
 states/Run/node = SubResource("AnimationNodeAnimation_1j0o8")
-states/Run/position = Vector2(665, 74)
+states/Run/position = Vector2(668, 74)
 states/Start/position = Vector2(373, 74)
 transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_8te10")]
 
@@ -58,27 +63,38 @@ script = SubResource("GDScript_gyof7")
 
 [node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
 bones/1/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
-bones/2/rotation = Quaternion(0.709754, -0.113967, 0.690992, -0.076103)
+bones/2/position = Vector3(1.42838, -1.27595, 0.0937002)
+bones/2/rotation = Quaternion(0.709735, -0.113971, 0.691013, -0.0760753)
 bones/2/scale = Vector3(0.999999, 1, 1)
-bones/3/rotation = Quaternion(-0.113386, 0.0336774, 0.00394688, 0.992972)
+bones/3/rotation = Quaternion(-0.104738, 0.031293, 0.00366775, 0.994001)
 bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(-0.0677954, 0.0249922, 0.00213759, 0.997384)
+bones/4/rotation = Quaternion(-0.0635688, 0.0238216, 0.00203898, 0.997691)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.176821, 0.0277188, 0.00389427, 0.983845)
+bones/5/rotation = Quaternion(-0.176787, 0.0277119, 0.00388889, 0.983851)
 bones/5/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-5.3239e-08, 4.49957e-07, 0.284849, 0.958572)
-bones/8/rotation = Quaternion(-0.107456, -0.698894, -0.107456, 0.698895)
+bones/7/position = Vector3(1.36729, -1.23742, 0.0936999)
+bones/7/rotation = Quaternion(-4.1623e-06, -4.1623e-06, 0.272772, 0.962079)
+bones/8/rotation = Quaternion(-0.100987, -0.699833, -0.101011, 0.69988)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.125043, -6.20856e-07, -1.52031e-07, 0.992151)
+bones/9/rotation = Quaternion(-0.125029, 1.42109e-14, -1.90782e-06, 0.992153)
 bones/9/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.037817, 0.706094, 0.037817, 0.706096)
-bones/13/rotation = Quaternion(-0.0298168, 0.031734, 0.276607, 0.959996)
-bones/15/rotation = Quaternion(-0.0422072, -0.0946207, 0.908347, 0.405181)
+bones/11/position = Vector3(-0.00262423, 0.00467341, 0.201974)
+bones/11/rotation = Quaternion(0.0372217, 0.706107, 0.0372645, 0.706143)
+bones/13/position = Vector3(0.396275, 1.0157, 0.342619)
+bones/13/rotation = Quaternion(-0.030131, 0.0314302, 0.286046, 0.957226)
+bones/15/position = Vector3(0.77086, -1.0622, 0.429183)
+bones/15/rotation = Quaternion(-0.0461676, -0.0927614, 0.890464, 0.4431)
 bones/15/scale = Vector3(1, 1, 1)
-bones/17/rotation = Quaternion(0.039782, 0.0177054, 0.406216, 0.912739)
+bones/17/position = Vector3(0.371356, 0.824057, -0.160467)
+bones/17/rotation = Quaternion(0.0394919, 0.0183073, 0.420256, 0.906361)
 bones/17/scale = Vector3(1, 1, 1)
-bones/19/rotation = Quaternion(0.0398359, 0.0956432, 0.91816, 0.382423)
+bones/19/position = Vector3(0.845041, -1.18073, -0.246219)
+bones/19/rotation = Quaternion(0.0439707, 0.0937765, 0.900525, 0.422289)
 bones/19/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
+reset_on_save = false
+speed_scale = 0.5
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Sketchfab_Scene")
@@ -86,9 +102,12 @@ tree_root = SubResource("AnimationNodeStateMachine_sa04f")
 anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["rats"]]
+avoidance_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.190809, -0.981627, 0, 0.981627, -0.190809, 0, 0, 0, 1, -0.11, 0.09, 0.02)
 shape = SubResource("CapsuleShape3D_dvu42")
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 
 [editable path="Sketchfab_Scene"]
