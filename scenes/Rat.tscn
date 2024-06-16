@@ -11,6 +11,8 @@ script/source = "extends CharacterBody3D
 const SPEED = 3.0
 const GRAVITY = 9.8
 
+const ANGULAR_ACCELERATION = 10
+
 func _process(delta):
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
@@ -22,6 +24,9 @@ func _process(delta):
 	var new_velocity = (next_location - current_location).normalized() * SPEED
 	
 	velocity = velocity.move_toward(new_velocity, .25)
+	
+	$Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode.rotation.y = lerp_angle($Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)	
+	
 	move_and_slide()
 
 func update_target_location(target_location):
