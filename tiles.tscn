@@ -1,0 +1,67 @@
+[gd_scene load_steps=22 format=3 uid="uid://dfepu1cml1bft"]
+
+[ext_resource type="PackedScene" uid="uid://bn6ietgqd00b" path="res://assets/models/MedievalAssets/Barrel03/Barrel03.glb" id="1_srlit"]
+[ext_resource type="PackedScene" uid="uid://du38sjhi3emjr" path="res://assets/models/MedievalAssets/Bench01/Bench01.glb" id="2_cvdke"]
+[ext_resource type="PackedScene" uid="uid://ci2bmrjdcwfhv" path="res://assets/models/MedievalAssets/Box01/Box01.glb" id="3_jxowq"]
+[ext_resource type="PackedScene" uid="uid://cyx0rj7vls4ru" path="res://assets/models/MedievalAssets/Brazier/Brazier.glb" id="4_c77u2"]
+[ext_resource type="PackedScene" uid="uid://dlgihgl20mnl3" path="res://assets/models/MedievalAssets/Bridge_Wood01/Bridge_Wood01.glb" id="5_eohod"]
+[ext_resource type="PackedScene" uid="uid://gkgiy1mkrp2g" path="res://assets/models/MedievalAssets/FenceWoodDoor_gate/FenceWoodDoor_gate.glb" id="6_srb4a"]
+[ext_resource type="PackedScene" uid="uid://biwhlhg6qojqe" path="res://assets/models/MedievalAssets/FenceWoodDoor_H02/FenceWoodDoor_H02.glb" id="7_cc4pa"]
+[ext_resource type="PackedScene" uid="uid://d3qtg3d3nhyck" path="res://assets/models/MedievalAssets/FenceWoodDoor_H03/FenceWoodDoor_H03.glb" id="8_24h8t"]
+[ext_resource type="PackedScene" uid="uid://bkgptjcesjml6" path="res://assets/models/MedievalAssets/FenceWoodDoor_H04/FenceWoodDoor_H04.glb" id="9_1a4u7"]
+[ext_resource type="PackedScene" uid="uid://bcb3wg4v38o60" path="res://assets/models/MedievalAssets/FenceWood_H01/FenceWood_H01.glb" id="10_1rtq7"]
+[ext_resource type="PackedScene" uid="uid://bavfchj3r6tbr" path="res://assets/models/MedievalAssets/Foundation_Wood_01/Foundation_Wood_01.glb" id="11_rbkv5"]
+[ext_resource type="PackedScene" uid="uid://cifgxxg4n7i5t" path="res://assets/models/MedievalAssets/Graveyard03/Graveyard03.glb" id="12_ty4ps"]
+[ext_resource type="PackedScene" uid="uid://caxgr64lvvcn2" path="res://assets/models/MedievalAssets/Railing02/Railing02.glb" id="13_c3uyv"]
+[ext_resource type="PackedScene" uid="uid://bl6ac24qyb14d" path="res://assets/models/MedievalAssets/Railing03/Railing03.glb" id="14_650bc"]
+[ext_resource type="PackedScene" uid="uid://de728rxuk1pe7" path="res://assets/models/MedievalAssets/Rock02/Rock02.glb" id="15_ufcnp"]
+[ext_resource type="PackedScene" uid="uid://blmj8a4orto6c" path="res://assets/models/MedievalAssets/Rock03/Rock03.glb" id="16_6j8r0"]
+[ext_resource type="PackedScene" uid="uid://cnhv2cd03ftg1" path="res://assets/models/MedievalAssets/Sign01/Sign01.glb" id="17_02jon"]
+[ext_resource type="PackedScene" uid="uid://dgbyfv64y6jaa" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01.glb" id="18_13h8v"]
+[ext_resource type="PackedScene" uid="uid://chp81os2oe7am" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01.glb" id="19_1w3l2"]
+[ext_resource type="PackedScene" uid="uid://dlt8n6xf0fmsy" path="res://assets/models/MedievalAssets/Wall_Stone01/Wall_Stone01.glb" id="20_t601a"]
+[ext_resource type="PackedScene" uid="uid://d1rc8vwfv75jh" path="res://assets/models/MedievalAssets/Wooden_Fence/Wooden_Fence.glb" id="21_rnjus"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="Barrel03" parent="." instance=ExtResource("1_srlit")]
+
+[node name="Bench01" parent="." instance=ExtResource("2_cvdke")]
+
+[node name="Box01" parent="." instance=ExtResource("3_jxowq")]
+
+[node name="Brazier" parent="." instance=ExtResource("4_c77u2")]
+
+[node name="Bridge_Wood01" parent="." instance=ExtResource("5_eohod")]
+
+[node name="FenceWoodDoor_gate" parent="." instance=ExtResource("6_srb4a")]
+
+[node name="FenceWoodDoor_H02" parent="." instance=ExtResource("7_cc4pa")]
+
+[node name="FenceWoodDoor_H03" parent="." instance=ExtResource("8_24h8t")]
+
+[node name="FenceWoodDoor_H04" parent="." instance=ExtResource("9_1a4u7")]
+
+[node name="FenceWood_H01" parent="." instance=ExtResource("10_1rtq7")]
+
+[node name="Foundation_Wood_01" parent="." instance=ExtResource("11_rbkv5")]
+
+[node name="Graveyard03" parent="." instance=ExtResource("12_ty4ps")]
+
+[node name="Railing02" parent="." instance=ExtResource("13_c3uyv")]
+
+[node name="Railing03" parent="." instance=ExtResource("14_650bc")]
+
+[node name="Rock02" parent="." instance=ExtResource("15_ufcnp")]
+
+[node name="Rock03" parent="." instance=ExtResource("16_6j8r0")]
+
+[node name="Sign01" parent="." instance=ExtResource("17_02jon")]
+
+[node name="Streetlamp01" parent="." instance=ExtResource("18_13h8v")]
+
+[node name="Stylized Hut01" parent="." instance=ExtResource("19_1w3l2")]
+
+[node name="Wall_Stone01" parent="." instance=ExtResource("20_t601a")]
+
+[node name="Wooden_Fence" parent="." instance=ExtResource("21_rnjus")]

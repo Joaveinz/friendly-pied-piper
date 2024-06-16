@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://v58u4ny5axh8"
+path.s3tc="res://.godot/imported/FenceWood_H01_3.png-87a0c7cf267e0329dd78047a5e03d4b8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "096e996941ebdb514df459b1ae70e163"
+}
+
+[deps]
+
+source_file="res://assets/models/MedievalAssets/FenceWood_H01/FenceWood_H01_3.png"
+dest_files=["res://.godot/imported/FenceWood_H01_3.png-87a0c7cf267e0329dd78047a5e03d4b8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/models/MedievalAssets/FenceWood_H01/FenceWood_H01_3.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
