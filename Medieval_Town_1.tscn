@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ck4gkkux4ff7b" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01_3.png" id="10_ckqd1"]
 [ext_resource type="Texture2D" uid="uid://c1aca72mr54l8" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01_4.png" id="11_nyefq"]
 [ext_resource type="Texture2D" uid="uid://dv788bo6mstxf" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01_5.png" id="12_tpr7i"]
-[ext_resource type="PackedScene" uid="uid://dpr5gelu67c5g" path="res://player.tscn" id="12_ukhp4"]
+[ext_resource type="PackedScene" uid="uid://df12646vid0b1" path="res://player.tscn" id="12_ukhp4"]
 [ext_resource type="PackedScene" uid="uid://oa1vad5os5pc" path="res://Rat.tscn" id="13_70p18"]
 [ext_resource type="Texture2D" uid="uid://bk11c0t0q26k5" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01_6.png" id="13_o3af0"]
 [ext_resource type="Texture2D" uid="uid://cekomk1fcaxyl" path="res://assets/models/MedievalAssets/Stylized Hut01/Stylized Hut01_7.png" id="14_810pg"]
@@ -557,6 +557,7 @@ transform = Transform3D(-0.947875, 0.197568, 0.250001, 0.310155, 0.392176, 0.866
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("12_ukhp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.36356, -2)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_4dhdv")
