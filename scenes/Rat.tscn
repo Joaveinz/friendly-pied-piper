@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://oa1vad5os5pc"]
+[gd_scene load_steps=8 format=3 uid="uid://oa1vad5os5pc"]
 
 [ext_resource type="PackedScene" uid="uid://cxk3lnnywtkwa" path="res://assets/rat_animated/scene.gltf" id="1_xqh53"]
 
@@ -21,13 +21,16 @@ func _process(delta):
 	else:
 		velocity.y -= 2
 		
+	# if rat is inside Player MusicArea then
+	# follow player
+		
 	var next_location = nav_agent.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * SPEED
 	
 	nav_agent.set_velocity(new_velocity)
 	
-	root_node.rotation.y = lerp_angle(root_node.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)	
+	root_node.rotation.y = lerp_angle(root_node.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
@@ -57,6 +60,8 @@ transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_
 radius = 0.1
 height = 0.75
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_dcjr7"]
+
 [node name="Rat" type="CharacterBody3D" groups=["rats"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.412096)
 script = SubResource("GDScript_gyof7")
@@ -69,33 +74,33 @@ transform = Transform3D(0.235365, 0, 0, 0, -1.02881e-08, 0.235365, 0, -0.235365,
 
 [node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
 bones/1/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
-bones/2/position = Vector3(0.689054, -1.29, 0.0937002)
-bones/2/rotation = Quaternion(0.692607, -0.192464, 0.695163, 0.00149062)
+bones/2/position = Vector3(1.05205, -1.39707, 0.0937002)
+bones/2/rotation = Quaternion(0.709735, -0.113971, 0.691013, -0.0760753)
 bones/2/scale = Vector3(0.999999, 1, 1)
-bones/3/rotation = Quaternion(0.014325, -0.00154571, -0.000181247, 0.999896)
+bones/3/rotation = Quaternion(0.020148, -0.00314508, -0.000368163, 0.999792)
 bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(0.137627, -0.0318958, -0.00272764, 0.989967)
+bones/4/rotation = Quaternion(-0.00280273, 0.00700069, 0.000598849, 0.999971)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.103746, 0.00745965, 0.00104778, 0.994575)
+bones/5/rotation = Quaternion(-0.176787, 0.0277119, 0.00388889, 0.983851)
 bones/5/scale = Vector3(1, 1, 1)
-bones/7/position = Vector3(0.77825, -1.23403, 0.0936999)
-bones/7/rotation = Quaternion(7.3266e-07, 9.92236e-07, -0.0218796, 0.999761)
-bones/8/rotation = Quaternion(0.0140895, -0.706944, 0.0140403, 0.70699)
+bones/7/position = Vector3(1.07747, -1.30951, 0.0936999)
+bones/7/rotation = Quaternion(-1.44617e-06, -1.44617e-06, 0.0947733, 0.995499)
+bones/8/rotation = Quaternion(-0.00715895, -0.707065, -0.00716794, 0.707076)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.0961508, -7.10543e-14, -1.99279e-06, 0.995367)
+bones/9/rotation = Quaternion(-0.125029, 1.42109e-14, -1.90782e-06, 0.992153)
 bones/9/scale = Vector3(1, 1, 1)
-bones/11/position = Vector3(-0.00262423, 0.189915, 0.136571)
-bones/11/rotation = Quaternion(0.0639064, 0.70419, 0.0639268, 0.704234)
-bones/13/position = Vector3(0.505342, 1.17803, 0.34848)
-bones/13/rotation = Quaternion(-0.0313078, 0.0278335, 0.601917, 0.797459)
-bones/15/position = Vector3(0.593542, -0.875917, 0.429183)
-bones/15/rotation = Quaternion(-0.0728502, -0.0736943, 0.707416, 0.69916)
+bones/11/position = Vector3(-0.00262423, 0.0578492, 0.297576)
+bones/11/rotation = Quaternion(0.028856, 0.706486, 0.0288994, 0.706547)
+bones/13/position = Vector3(0.403784, 0.822955, 0.342619)
+bones/13/rotation = Quaternion(-0.0342884, 0.0268401, 0.418912, 0.906982)
+bones/15/position = Vector3(0.475278, -0.579194, 0.429183)
+bones/15/rotation = Quaternion(-0.0923155, -0.0470587, 0.4517, 0.886132)
 bones/15/scale = Vector3(1, 1, 1)
-bones/17/position = Vector3(0.70679, 0.900591, -0.160467)
-bones/17/rotation = Quaternion(0.036681, 0.0234437, 0.538124, 0.841741)
+bones/17/position = Vector3(0.481583, 0.509069, -0.160467)
+bones/17/rotation = Quaternion(0.0344441, 0.0266163, 0.610858, 0.790543)
 bones/17/scale = Vector3(1, 1, 1)
-bones/19/position = Vector3(0.510415, -0.785379, -0.229223)
-bones/19/rotation = Quaternion(0.0775606, 0.0686614, 0.659264, 0.744742)
+bones/19/position = Vector3(0.464973, -0.713254, -0.234537)
+bones/19/rotation = Quaternion(0.0925358, 0.0465802, 0.447246, 0.888391)
 bones/19/scale = Vector3(1, 1, 1)
 
 [node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
@@ -107,12 +112,17 @@ root_node = NodePath("../Sketchfab_Scene")
 tree_root = SubResource("AnimationNodeStateMachine_sa04f")
 anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["rats"]]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="HitBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.91068e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0.12, 0.11)
 shape = SubResource("CapsuleShape3D_dvu42")
+
+[node name="Area3D" type="Area3D" parent="." groups=["ratsCollision"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_dcjr7")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 

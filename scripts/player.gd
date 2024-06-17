@@ -13,8 +13,8 @@ var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 
-@onready var twist_pivot := get_node("TwistPivot")
-@onready var pitch_pivot := $TwistPivot/PitchPivot
+@onready var twist_pivot := get_node("%TwistPivot")
+@onready var pitch_pivot := get_node("%TwistPivot/PitchPivot")
 
 
 func _ready() -> void:
@@ -66,3 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twist_input = - event.relative.x * mouse_sensitivity
 			pitch_input = - event.relative.y * mouse_sensitivity
+
+
+func _on_music_area_area_entered(area):
+	print("collided")

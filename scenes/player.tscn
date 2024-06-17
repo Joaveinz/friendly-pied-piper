@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://df12646vid0b1"]
+[gd_scene load_steps=9 format=3 uid="uid://df12646vid0b1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7iyiu"]
 [ext_resource type="Texture2D" uid="uid://ddqxok0r7hul4" path="res://assets/models/PlayerModel/humanMaleA.png" id="2_nftea"]
@@ -175,20 +175,25 @@ bind/44/pose = Transform3D(-0.992802, 0.119376, 0.00958338, -0.119664, -0.992026
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn0nf"]
 albedo_texture = ExtResource("2_nftea")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ssjs6"]
+radius = 8.0
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 script = ExtResource("1_7iyiu")
 
 [node name="TwistPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="HitBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(-100, -8.74228e-06, -1.04216e-12, 0, -1.19209e-05, 100, -8.74228e-06, 100, 1.19209e-05, 0, -2, 0)
 shape = SubResource("ConvexPolygonShape3D_byrpq")
 
@@ -607,4 +612,13 @@ skin = SubResource("Skin_c5u1w")
 surface_material_override/0 = SubResource("StandardMaterial3D_xn0nf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../CollisionShape3D")
+root_node = NodePath("../HitBox")
+
+[node name="MusicArea" type="Area3D" parent="." groups=["player"]]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicArea"]
+shape = SubResource("SphereShape3D_ssjs6")
+
+[connection signal="area_entered" from="MusicArea" to="." method="_on_music_area_area_entered"]
+[connection signal="area_entered" from="MusicArea" to="." method="_on_music_area_entered"]
