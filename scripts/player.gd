@@ -23,6 +23,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+func my_func():
+	pass
+	
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -68,5 +71,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			pitch_input = - event.relative.y * mouse_sensitivity
 
 
-func _on_music_area_area_entered(area):
+func _on_music_area_body_entered(body):
+	# body.is_inside_music_area = true
+	get_tree().call_group("rats", "update_target_location", global_transform.origin)
+
+func _on_music_area_body_exited(body):
+	# body.is_inside_music_area = false
 	get_tree().call_group("rats", "update_target_location", global_transform.origin)
