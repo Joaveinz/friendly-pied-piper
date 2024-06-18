@@ -49,7 +49,7 @@ func _physics_process(delta):
 	move_and_slide()
 		
 	twist_pivot.rotate_y(twist_input)
-	pitch_pivot.rotate_x(twist_input)
+	pitch_pivot.rotate_x(pitch_input)
 	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x,
 		deg_to_rad(-30),
 		deg_to_rad(30),
@@ -69,4 +69,4 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_music_area_area_entered(area):
-	print("collided")
+	get_tree().call_group("rats", "update_target_location", global_transform.origin)
