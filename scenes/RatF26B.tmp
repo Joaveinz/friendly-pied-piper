@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://oa1vad5os5pc"]
+
+[ext_resource type="PackedScene" uid="uid://cxk3lnnywtkwa" path="res://assets/rat_animated/scene.gltf" id="1_xqh53"]
+
+[sub_resource type="GDScript" id="GDScript_gyof7"]
+script/source = "extends CharacterBody3D
+
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var root_node = $Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode
+@onready var player = get_parent().get_node(\"Player\")
+@export var is_inside_music_area : bool = false
+
+const SPEED = 2.5
+const GRAVITY = 9.8
+const ANGULAR_ACCELERATION = 10
+
+func _process(delta):
+	#if not is_on_floor():
+		#velocity.y -= GRAVITY * delta
+	#else:
+		#velocity.y = 0
+	debugger;
+	if not is_on_floor():
+		velocity.y -= GRAVITY * delta
+
+		
+	if is_inside_music_area:
+		var next_location = nav_agent.get_next_path_position()
+		var current_location = global_transform.origin
+		var new_velocity = (next_location - current_location).normalized() * SPEED
+		nav_agent.set_velocity(new_velocity)
+		root_node.rotation.y = lerp_angle(root_node.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)
+
+func set_has_entered_music_area(new_state):
+	is_inside_music_area = new_state
+
+func update_target_location(target_location):
+	nav_agent.target_position = player.global_transform.origin
+
+func _on_navigation_agent_3d_velocity_computed(safe_velocity):
+	velocity = velocity.move_toward(safe_velocity, .25)
+	move_and_slide()
+"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1j0o8"]
+resource_local_to_scene = true
+resource_name = "Running"
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8te10"]
+xfade_time = 0.4
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sa04f"]
+states/Run/node = SubResource("AnimationNodeAnimation_1j0o8")
+states/Run/position = Vector2(668, 74)
+states/Start/position = Vector2(373, 74)
+transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_8te10")]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dvu42"]
+radius = 0.1
+height = 0.75
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dcjr7"]
+
+[node name="Rat" type="CharacterBody3D" groups=["rats"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.412096)
+script = SubResource("GDScript_gyof7")
+is_inside_music_area = null
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_xqh53")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Sketchfab_model" parent="Sketchfab_Scene" index="0"]
+transform = Transform3D(0.235365, 0, 0, 0, -1.02881e-08, 0.235365, 0, -0.235365, -1.02881e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
+bones/1/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
+bones/2/position = Vector3(1.05745, -1.41212, 0.0937002)
+bones/2/rotation = Quaternion(0.681112, -0.229856, 0.694051, 0.0393118)
+bones/2/scale = Vector3(0.999999, 1, 1)
+bones/3/rotation = Quaternion(-0.107808, 0.0321369, 0.00376591, 0.993645)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.0461893, -0.00654175, -0.000557292, 0.998911)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0436815, -0.00909597, -0.00127965, 0.999003)
+bones/5/scale = Vector3(1, 1, 1)
+bones/7/position = Vector3(1.07678, -1.35238, 0.0936999)
+bones/7/rotation = Quaternion(-1.90781e-06, -1.90781e-06, 0.125027, 0.992153)
+bones/8/rotation = Quaternion(-0.0978074, -0.700285, -0.097864, 0.700327)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.000196345, -2.878e-07, -5.846e-07, 1)
+bones/9/scale = Vector3(1, 1, 1)
+bones/11/position = Vector3(-0.00262423, 0.33873, -0.105685)
+bones/11/rotation = Quaternion(0.127183, 0.69555, 0.127224, 0.695592)
+bones/13/position = Vector3(0.466102, 1.19087, 0.34848)
+bones/13/rotation = Quaternion(-0.022726, 0.0351809, 0.36693, 0.929305)
+bones/15/position = Vector3(0.793199, -1.3335, 0.429183)
+bones/15/rotation = Quaternion(-0.0378559, -0.0964666, 0.925915, 0.36324)
+bones/15/scale = Vector3(1, 1, 1)
+bones/17/position = Vector3(0.738664, 1.10162, -0.160467)
+bones/17/rotation = Quaternion(0.0420864, 0.0111175, 0.255185, 0.965912)
+bones/17/scale = Vector3(1, 1, 1)
+bones/19/position = Vector3(0.809849, -1.28466, -0.229223)
+bones/19/rotation = Quaternion(0.0425022, 0.094446, 0.906973, 0.408256)
+bones/19/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
+reset_on_save = false
+speed_scale = 0.5
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Sketchfab_Scene")
+tree_root = SubResource("AnimationNodeStateMachine_sa04f")
+anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+
+[node name="HitBox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.91068e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0.12, 0.11)
+shape = SubResource("CapsuleShape3D_dvu42")
+
+[node name="Area3D" type="Area3D" parent="." groups=["ratsCollision"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_dcjr7")
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+
+[editable path="Sketchfab_Scene"]

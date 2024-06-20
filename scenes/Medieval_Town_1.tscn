@@ -659,8 +659,10 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_dgexg")
 
 [node name="Rat" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22169, 0.5, 1.87915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22169, 1.39132, 1.87915)
 
 [node name="Rat2" parent="." instance=ExtResource("13_70p18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15082, 0.412096)
 
 [node name="Rat3" parent="." instance=ExtResource("13_70p18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.883317, 0.932856, 0.412096)
