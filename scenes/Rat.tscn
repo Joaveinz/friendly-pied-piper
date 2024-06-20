@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oa1vad5os5pc"]
+[gd_scene load_steps=5 format=3 uid="uid://oa1vad5os5pc"]
 
 [ext_resource type="PackedScene" uid="uid://cxk3lnnywtkwa" path="res://assets/rat_animated/scene.gltf" id="1_xqh53"]
 
@@ -9,6 +9,7 @@ script/source = "extends CharacterBody3D
 @onready var root_node = $Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode
 @onready var player = get_parent().get_node(\"Player\")
 @export var is_inside_music_area : bool = false
+@onready var animation_player = $Sketchfab_Scene/AnimationPlayer
 
 const SPEED = 1.5
 const GRAVITY = 9.8
@@ -17,6 +18,11 @@ const ANGULAR_ACCELERATION = 10
 func _process(delta):
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
+	if !velocity.is_zero_approx():
+		animation_player.play(\"Run\")
+	else:
+		#TODO: replace with idle animation?
+		animation_player.stop()
 
 	if is_inside_music_area:
 		nav_agent.target_position = player.global_transform.origin
@@ -34,21 +40,6 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity = velocity.move_toward(safe_velocity, .25)
 	move_and_slide()
 "
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1j0o8"]
-resource_local_to_scene = true
-resource_name = "Running"
-animation = &"Run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8te10"]
-xfade_time = 0.4
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sa04f"]
-states/Run/node = SubResource("AnimationNodeAnimation_1j0o8")
-states/Run/position = Vector2(668, 74)
-states/Start/position = Vector2(373, 74)
-transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_8te10")]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dvu42"]
 radius = 0.1
@@ -68,43 +59,30 @@ transform = Transform3D(0.235365, 0, 0, 0, -1.02881e-08, 0.235365, 0, -0.235365,
 
 [node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode/Armature/Object_6" index="0"]
 bones/1/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
-bones/2/position = Vector3(1.05745, -1.41212, 0.0937002)
-bones/2/rotation = Quaternion(0.681112, -0.229856, 0.694051, 0.0393118)
+bones/2/rotation = Quaternion(0.709754, -0.113967, 0.690992, -0.076103)
 bones/2/scale = Vector3(0.999999, 1, 1)
-bones/3/rotation = Quaternion(-0.107808, 0.0321369, 0.00376591, 0.993645)
+bones/3/rotation = Quaternion(-0.113386, 0.0336774, 0.00394688, 0.992972)
 bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(0.0461893, -0.00654175, -0.000557292, 0.998911)
+bones/4/rotation = Quaternion(-0.0677954, 0.0249922, 0.00213759, 0.997384)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.0436815, -0.00909597, -0.00127965, 0.999003)
+bones/5/rotation = Quaternion(-0.176821, 0.0277188, 0.00389427, 0.983845)
 bones/5/scale = Vector3(1, 1, 1)
-bones/7/position = Vector3(1.07678, -1.35238, 0.0936999)
-bones/7/rotation = Quaternion(-1.90781e-06, -1.90781e-06, 0.125027, 0.992153)
-bones/8/rotation = Quaternion(-0.0978074, -0.700285, -0.097864, 0.700327)
+bones/7/rotation = Quaternion(-5.3239e-08, 4.49957e-07, 0.284849, 0.958572)
+bones/8/rotation = Quaternion(-0.107456, -0.698894, -0.107456, 0.698895)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.000196345, -2.878e-07, -5.846e-07, 1)
+bones/9/rotation = Quaternion(-0.125043, -6.20856e-07, -1.52031e-07, 0.992151)
 bones/9/scale = Vector3(1, 1, 1)
-bones/11/position = Vector3(-0.00262423, 0.33873, -0.105685)
-bones/11/rotation = Quaternion(0.127183, 0.69555, 0.127224, 0.695592)
-bones/13/position = Vector3(0.466102, 1.19087, 0.34848)
-bones/13/rotation = Quaternion(-0.022726, 0.0351809, 0.36693, 0.929305)
-bones/15/position = Vector3(0.793199, -1.3335, 0.429183)
-bones/15/rotation = Quaternion(-0.0378559, -0.0964666, 0.925915, 0.36324)
+bones/11/rotation = Quaternion(0.037817, 0.706094, 0.037817, 0.706096)
+bones/13/rotation = Quaternion(-0.0298168, 0.031734, 0.276607, 0.959996)
+bones/15/rotation = Quaternion(-0.0422072, -0.0946207, 0.908347, 0.405181)
 bones/15/scale = Vector3(1, 1, 1)
-bones/17/position = Vector3(0.738664, 1.10162, -0.160467)
-bones/17/rotation = Quaternion(0.0420864, 0.0111175, 0.255185, 0.965912)
 bones/17/scale = Vector3(1, 1, 1)
-bones/19/position = Vector3(0.809849, -1.28466, -0.229223)
-bones/19/rotation = Quaternion(0.0425022, 0.094446, 0.906973, 0.408256)
+bones/19/rotation = Quaternion(0.0398359, 0.0956432, 0.91816, 0.382423)
 bones/19/scale = Vector3(1, 1, 1)
 
 [node name="AnimationPlayer" parent="Sketchfab_Scene" index="1"]
 reset_on_save = false
 speed_scale = 0.5
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../Sketchfab_Scene")
-tree_root = SubResource("AnimationNodeStateMachine_sa04f")
-anim_player = NodePath("../Sketchfab_Scene/AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
