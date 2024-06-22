@@ -8,3 +8,5 @@ func _process(delta):
 func _on_death_area_body_entered(body):
 	if body.name.contains("Rat"):
 		body.is_alive = false
+		$UserInterface/ScoreLabel.increase_score()
+

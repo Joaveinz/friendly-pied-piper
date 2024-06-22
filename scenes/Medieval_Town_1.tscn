@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=166 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Script" path="res://scripts/Medieval_Town_1.gd" id="1_84x6b"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://cgvqji31rm0y2" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_8.png" id="53_g78y4"]
 [ext_resource type="Texture2D" uid="uid://b1iblq3sh0pvl" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_9.png" id="54_b8df2"]
 [ext_resource type="Texture2D" uid="uid://bhdqeqkdrj61a" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_10.png" id="55_a4lgj"]
+[ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="55_kqtcu"]
 [ext_resource type="Texture2D" uid="uid://u02xxodeybi2" path="res://assets/models/trashcan_Image.png" id="57_ig0wd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dhdv"]
@@ -1353,6 +1354,8 @@ shadow_mesh = SubResource("ArrayMesh_ix35h")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qwudl"]
 points = PackedVector3Array(0.127347, 1.44376, -0.662288, 0.0821785, 1.44415, 0.669192, 0.10534, -0.00489156, -0.553071, -0.686108, 1.42269, -0.125091, -0.40576, 0.0141071, 0.390142, 0.55318, 0.00352141, 0.104126, 0.692729, 1.42269, -0.10174, -0.430001, 0.0105846, -0.363318, 0.283979, 0.00311235, 0.486038, 0.552361, 1.42269, 0.435464, -0.475692, 1.46969, -0.522325, -0.569225, 1.42269, 0.412114, 0.412107, 0.0143609, -0.38346, -0.543069, 0.00808109, 0.148053, 0.412129, 1.42269, -0.569162, -0.187526, 0.00341814, 0.530822, -0.218713, 1.42269, -0.6627, -0.209271, 0.00571821, -0.52259, -0.405644, 1.42269, 0.575839, 0.645737, 1.44329, 0.194812, 0.201849, 1.42269, 0.669243, -0.522607, 0.00560194, -0.209227, 0.503266, 0.0105418, -0.252176, 0.575846, 1.42269, -0.405571, -0.686108, 1.42269, 0.131634, 0.104159, 0.00351874, 0.553175, -0.10183, 1.44626, 0.692729, -0.592575, 1.42269, -0.38222, 0.459143, 0.0100903, 0.325673, 0.669244, 1.42269, 0.201821, 0.1318, 1.42269, -0.686186, 0.435479, 1.42269, 0.552354)
+
+[sub_resource type="Theme" id="Theme_0pcwe"]
 
 [node name="MedievalTown1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202063, 0, -0.259794)
@@ -3080,6 +3083,20 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan/Trashcan Exterior/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwudl")
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_0pcwe")
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+script = ExtResource("55_kqtcu")
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
 [connection signal="body_entered" from="DeathArea2" to="." method="_on_death_area_body_entered"]
