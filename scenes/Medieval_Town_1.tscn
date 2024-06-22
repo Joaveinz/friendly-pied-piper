@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=168 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Script" path="res://scripts/Medieval_Town_1.gd" id="1_84x6b"]
@@ -1359,6 +1359,9 @@ points = PackedVector3Array(0.127347, 1.44376, -0.662288, 0.0821785, 1.44415, 0.
 radius = 1.0
 
 [sub_resource type="Theme" id="Theme_0pcwe"]
+default_font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_eheq8"]
 
 [node name="MedievalTown1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202063, 0, -0.259794)
@@ -2401,7 +2404,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_o8jk4")
 
 [node name="Wall_Stone013" type="Node3D" parent="NavigationRegion3D/Level_Models"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -18.5)
 
 [node name="Wall_Stone01" type="MeshInstance3D" parent="NavigationRegion3D/Level_Models/Wall_Stone013"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0212193, 0, -0.0424385)
@@ -2950,7 +2953,7 @@ mesh = SubResource("ArrayMesh_7iwxa")
 skeleton = NodePath("")
 
 [node name="Rat" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0.67, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0.67, -15)
 
 [node name="Rat2" parent="." instance=ExtResource("13_70p18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.67, 19)
@@ -3116,9 +3119,11 @@ theme = SubResource("Theme_0pcwe")
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 69.0
 offset_bottom = 23.0
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_eheq8")
+uppercase = true
 script = ExtResource("55_kqtcu")
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

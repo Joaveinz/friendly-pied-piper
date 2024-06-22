@@ -14,7 +14,9 @@ script/source = "extends CharacterBody3D
 @export var is_inside_trash_area : bool = false
 @export var is_alive : bool = true
 
-const SPEED = 1.5
+signal dead
+
+const SPEED = 2.0
 const GRAVITY = 9.8
 const ANGULAR_ACCELERATION = 10
 
@@ -36,15 +38,13 @@ func _process(delta):
 		root_node.rotation.y = lerp_angle(root_node.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)
 	else:
 		nav_agent.set_velocity(Vector3(0,0,0))	
-		
-	if (! is_alive):
-		queue_free()
 	
 	move_and_slide()
 	
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity = velocity.move_toward(safe_velocity, .25)
 	move_and_slide()
+
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dvu42"]
