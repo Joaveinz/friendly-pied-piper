@@ -2172,20 +2172,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level_Models/Rock6/Rock022/Rock02/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8u4ow")
 
-[node name="Rock7" type="Node3D" parent="NavigationRegion3D/Level_Models"]
-transform = Transform3D(-0.95424, 0, -0.299041, 0, 1, 0, 0.299041, 0, -0.95424, -23.4571, 0, -13.861)
-
-[node name="Rock022" type="Node3D" parent="NavigationRegion3D/Level_Models/Rock7"]
-
-[node name="Rock02" type="MeshInstance3D" parent="NavigationRegion3D/Level_Models/Rock7/Rock022"]
-mesh = SubResource("ArrayMesh_8ulvo")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Level_Models/Rock7/Rock022/Rock02"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level_Models/Rock7/Rock022/Rock02/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_8u4ow")
-
 [node name="Rock8" type="Node3D" parent="NavigationRegion3D/Level_Models"]
 transform = Transform3D(-0.95424, 0, -0.299041, 0, 1, 0, 0.299041, 0, -0.95424, -17.8025, 0, -16.2837)
 
@@ -2958,34 +2944,34 @@ mesh = SubResource("ArrayMesh_7iwxa")
 skeleton = NodePath("")
 
 [node name="Rat" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.67, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0.67, -14)
 
 [node name="Rat2" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.67, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.67, 19)
 
 [node name="Rat3" parent="." instance=ExtResource("13_70p18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.67, 8)
 
 [node name="Rat4" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.67, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.67, -10)
 
 [node name="Rat5" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.67, 18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.67, 18)
 
 [node name="Rat6" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.67, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.67, 5)
 
 [node name="Rat7" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.67, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.67, -6)
 
 [node name="Rat8" parent="." instance=ExtResource("13_70p18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.67, 17)
 
 [node name="Rat9" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.67, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.67, -19.0376)
 
 [node name="Rat10" parent="." instance=ExtResource("13_70p18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.75, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.67, -2)
 
 [node name="DeathArea" type="Area3D" parent="." groups=["player"]]
 unique_name_in_owner = true
@@ -3042,7 +3028,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_qwudl")
 
 [node name="Trashcan3" type="Node3D" parent="." groups=["trashcans"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9537, 0.7, 14.0463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.7, 14)
 
 [node name="BezierCircle" type="Node3D" parent="Trashcan3"]
 
@@ -3060,7 +3046,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_qwudl")
 
 [node name="Trashcan4" type="Node3D" parent="." groups=["trashcans"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4442, 0.7, 12.7031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3223, 0.7, 11.6421)
 
 [node name="BezierCircle" type="Node3D" parent="Trashcan4"]
 
