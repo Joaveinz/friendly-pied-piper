@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=167 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Script" path="res://scripts/Medieval_Town_1.gd" id="1_84x6b"]
@@ -1354,6 +1354,9 @@ shadow_mesh = SubResource("ArrayMesh_ix35h")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qwudl"]
 points = PackedVector3Array(0.127347, 1.44376, -0.662288, 0.0821785, 1.44415, 0.669192, 0.10534, -0.00489156, -0.553071, -0.686108, 1.42269, -0.125091, -0.40576, 0.0141071, 0.390142, 0.55318, 0.00352141, 0.104126, 0.692729, 1.42269, -0.10174, -0.430001, 0.0105846, -0.363318, 0.283979, 0.00311235, 0.486038, 0.552361, 1.42269, 0.435464, -0.475692, 1.46969, -0.522325, -0.569225, 1.42269, 0.412114, 0.412107, 0.0143609, -0.38346, -0.543069, 0.00808109, 0.148053, 0.412129, 1.42269, -0.569162, -0.187526, 0.00341814, 0.530822, -0.218713, 1.42269, -0.6627, -0.209271, 0.00571821, -0.52259, -0.405644, 1.42269, 0.575839, 0.645737, 1.44329, 0.194812, 0.201849, 1.42269, 0.669243, -0.522607, 0.00560194, -0.209227, 0.503266, 0.0105418, -0.252176, 0.575846, 1.42269, -0.405571, -0.686108, 1.42269, 0.131634, 0.104159, 0.00351874, 0.553175, -0.10183, 1.44626, 0.692729, -0.592575, 1.42269, -0.38222, 0.459143, 0.0100903, 0.325673, 0.669244, 1.42269, 0.201821, 0.1318, 1.42269, -0.686186, 0.435479, 1.42269, 0.552354)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ukjay"]
+radius = 1.0
 
 [sub_resource type="Theme" id="Theme_0pcwe"]
 
@@ -2976,7 +2979,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.67, -19.0376)
 [node name="Rat10" parent="." instance=ExtResource("13_70p18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.67, -2)
 
-[node name="DeathArea" type="Area3D" parent="." groups=["player"]]
+[node name="DeathArea" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0240517)
 
@@ -2984,7 +2987,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -24)
 shape = SubResource("BoxShape3D_0gkvc")
 
-[node name="DeathArea2" type="Area3D" parent="." groups=["player"]]
+[node name="DeathArea2" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0240517)
 
@@ -2992,7 +2995,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 24)
 shape = SubResource("BoxShape3D_0gkvc")
 
-[node name="DeathArea3" type="Area3D" parent="." groups=["player"]]
+[node name="DeathArea3" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0240517)
 
@@ -3000,7 +3003,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 1, 0)
 shape = SubResource("BoxShape3D_0gkvc")
 
-[node name="DeathArea4" type="Area3D" parent="." groups=["player"]]
+[node name="DeathArea4" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00467491, -4.76837e-07, 0.0240517)
 
@@ -3030,6 +3033,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan2/Trashcan Exterior/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwudl")
 
+[node name="TrashArea" type="Area3D" parent="Trashcan2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan2/TrashArea"]
+shape = SubResource("SphereShape3D_ukjay")
+
 [node name="Trashcan3" type="Node3D" parent="." groups=["trashcans"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.7, 14)
 
@@ -3047,6 +3055,11 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan3/Trashcan Exterior/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwudl")
+
+[node name="TrashArea" type="Area3D" parent="Trashcan3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan3/TrashArea"]
+shape = SubResource("SphereShape3D_ukjay")
 
 [node name="Trashcan4" type="Node3D" parent="." groups=["trashcans"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3223, 0.7, 11.6421)
@@ -3066,6 +3079,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan4/Trashcan Exterior/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwudl")
 
+[node name="TrashArea" type="Area3D" parent="Trashcan4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan4/TrashArea"]
+shape = SubResource("SphereShape3D_ukjay")
+
 [node name="Trashcan" type="Node3D" parent="." groups=["trashcans"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0.7, -3)
 
@@ -3083,6 +3101,11 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan/Trashcan Exterior/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qwudl")
+
+[node name="TrashArea" type="Area3D" parent="Trashcan"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trashcan/TrashArea"]
+shape = SubResource("SphereShape3D_ukjay")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -3102,3 +3125,7 @@ script = ExtResource("55_kqtcu")
 [connection signal="body_entered" from="DeathArea2" to="." method="_on_death_area_body_entered"]
 [connection signal="body_entered" from="DeathArea3" to="." method="_on_death_area_body_entered"]
 [connection signal="body_entered" from="DeathArea4" to="." method="_on_death_area_body_entered"]
+[connection signal="body_entered" from="Trashcan2/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_entered" from="Trashcan3/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_entered" from="Trashcan4/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_entered" from="Trashcan/TrashArea" to="." method="_on_trash_area_body_entered"]

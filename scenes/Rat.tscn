@@ -11,6 +11,7 @@ script/source = "extends CharacterBody3D
 @onready var animation_player = $Sketchfab_Scene/AnimationPlayer
 
 @export var is_inside_music_area : bool = false
+@export var is_inside_trash_area : bool = false
 @export var is_alive : bool = true
 
 const SPEED = 1.5
