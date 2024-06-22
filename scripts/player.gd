@@ -12,8 +12,10 @@ var pitch_input := 0.0
 
 @onready var twist_pivot := get_node("%TwistPivot")
 @onready var pitch_pivot := get_node("%TwistPivot/PitchPivot")
+@onready var animation_tree = $Skeleton3D/Pete/AnimationTree
 
 func _ready() -> void:
+	animation_tree.active = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _physics_process(delta):
@@ -23,6 +25,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#animation_tree.
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -46,7 +49,7 @@ func _physics_process(delta):
 	)
 	twist_input = 0
 	pitch_input = 0
-	
+	update_animation_parameters()
 	move_and_slide()	
 	
 func _input(event):
@@ -66,3 +69,16 @@ func _on_music_area_body_entered(body):
 func _on_music_area_body_exited(body):
 	if body.name.contains("Rat"):
 		body.is_inside_music_area = false
+		
+func update_animation_parameters():
+	if(velocity == Vector3.ZERO):
+		animation_tree["parameters/conditions/is_idle"] = true
+		animation_tree["parameters/conditions/is_running"] = false
+	else:
+		animation_tree["parameters/conditions/is_idle"] = false
+		animation_tree["parameters/conditions/is_running"] = true
+
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		animation_tree["parameters/conditions/jump_pressed"] = true
+	else:
+		animation_tree["parameters/conditions/jump_pressed"] = false			
