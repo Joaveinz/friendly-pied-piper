@@ -8,8 +8,10 @@ script/source = "extends CharacterBody3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var root_node = $Sketchfab_Scene/Sketchfab_model/RAT_fbx/Object_2/RootNode
 @onready var player = get_parent().get_node(\"Player\")
-@export var is_inside_music_area : bool = false
 @onready var animation_player = $Sketchfab_Scene/AnimationPlayer
+
+@export var is_inside_music_area : bool = false
+@export var is_alive : bool = true
 
 const SPEED = 1.5
 const GRAVITY = 9.8
@@ -33,6 +35,9 @@ func _process(delta):
 		root_node.rotation.y = lerp_angle(root_node.rotation.y, atan2(velocity.x,velocity.z), delta * ANGULAR_ACCELERATION)
 	else:
 		nav_agent.set_velocity(Vector3(0,0,0))	
+		
+	if (! is_alive):
+		queue_free()
 	
 	move_and_slide()
 	
