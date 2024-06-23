@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceyjisqh08d52"]
+[gd_scene load_steps=9 format=3 uid="uid://ceyjisqh08d52"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_4pmwy"]
 [ext_resource type="AudioStream" uid="uid://byohjid0v3auf" path="res://assets/music/Main_Menu_Theme.mp3" id="2_ls4df"]
@@ -11,7 +11,17 @@ default_font_size = 60
 default_font_size = 60
 
 [sub_resource type="Theme" id="Theme_slu6v"]
+resource_local_to_scene = true
 default_font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_iaiqt"]
+font_size = 60
+
+[sub_resource type="Theme" id="Theme_otsgk"]
+default_font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhysf"]
+font_size = 24
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -33,31 +43,44 @@ autoplay = true
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 720.0
-offset_top = 260.0
+offset_top = 339.0
 offset_right = 1220.0
-offset_bottom = 510.0
+offset_bottom = 589.0
 theme = SubResource("Theme_torh1")
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
 offset_left = 720.0
-offset_top = 570.0
+offset_top = 649.0
 offset_right = 1220.0
-offset_bottom = 820.0
+offset_bottom = 899.0
 theme = SubResource("Theme_imovi")
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Game Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 570.0
-offset_top = 30.0
-offset_right = 1379.0
-offset_bottom = 204.0
+offset_left = 567.0
+offset_right = 1376.0
+offset_bottom = 174.0
 theme = SubResource("Theme_slu6v")
 text = "Friendly Pied Piper"
+label_settings = SubResource("LabelSettings_iaiqt")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Game Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 110.0
+offset_right = 1401.0
+offset_bottom = 319.0
+theme = SubResource("Theme_otsgk")
+text = "Become the legendary Pied Piper and lure the rats of medieval Hameln to their watery demise in the river, rescuing the town from their plague."
+label_settings = SubResource("LabelSettings_bhysf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
