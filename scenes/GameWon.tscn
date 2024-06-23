@@ -1,24 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://de8ujocg0pjkp"]
+[gd_scene load_steps=7 format=3 uid="uid://de8ujocg0pjkp"]
+
+[ext_resource type="Script" path="res://scripts/GameWon.gd" id="1_ri81o"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="2_ltt3l"]
+[ext_resource type="AudioStream" uid="uid://byohjid0v3auf" path="res://assets/music/Main_Menu_Theme.mp3" id="3_b14pt"]
+
+[sub_resource type="Theme" id="Theme_imovi"]
+default_font_size = 60
+
+[sub_resource type="Theme" id="Theme_xwbxl"]
+resource_local_to_scene = true
+default_font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_tphkk"]
 font_size = 40
 
 [node name="GameWon" type="Node2D"]
+script = ExtResource("1_ri81o")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 249.0
-offset_top = 417.0
-offset_right = 1672.0
-offset_bottom = 588.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 135.0
+offset_right = 320.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_ltt3l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_b14pt")
+autoplay = true
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 991.0
+offset_top = 509.0
+offset_right = 1491.0
+offset_bottom = 759.0
+theme = SubResource("Theme_imovi")
+text = "Quit"
+
+[node name="ReturnToStart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 507.0
+offset_right = 900.0
+offset_bottom = 757.0
+theme = SubResource("Theme_xwbxl")
+text = "Back to Start
+"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 217.0
+offset_right = 1633.0
+offset_bottom = 388.0
 text = "With the final note of your magical flute, the last rat plunges into the river. Hameln is saved, the streets are safe, and you, the Pied Piper, are hailed as the town's hero. Peace is restored, and your legend is secured."
 label_settings = SubResource("LabelSettings_tphkk")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[connection signal="pressed" from="Control/Quit" to="Control" method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/ReturnToStart" to="." method="_on_play_again_pressed"]
