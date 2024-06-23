@@ -8,7 +8,7 @@ func _process(delta):
 		îs_game_won = true
 		
 	if îs_game_won:
-		print("Congratulation, you killed all rats")
+		get_tree().change_scene_to_file("res://scenes/GameWon.tscn")
 
 func _on_death_area_body_entered(body):
 	if body.name.contains("Rat"):
