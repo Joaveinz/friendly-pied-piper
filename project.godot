@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Friendly Pied Piper"
-run/main_scene="res://scenes/Medieval_Town_1.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 

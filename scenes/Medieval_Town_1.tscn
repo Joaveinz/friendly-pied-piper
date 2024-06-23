@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://b1iblq3sh0pvl" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_9.png" id="54_b8df2"]
 [ext_resource type="Texture2D" uid="uid://bhdqeqkdrj61a" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_10.png" id="55_a4lgj"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="55_kqtcu"]
-[ext_resource type="AudioStream" uid="uid://6rrgv4a02emv" path="res://assets/music/Gaming Flute Mix (1).mp3" id="56_t7y0o"]
+[ext_resource type="AudioStream" uid="uid://6rrgv4a02emv" path="res://assets/music/Level_Theme.mp3" id="56_t7y0o"]
 [ext_resource type="Texture2D" uid="uid://u02xxodeybi2" path="res://assets/models/trashcan_Image.png" id="57_ig0wd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dhdv"]
