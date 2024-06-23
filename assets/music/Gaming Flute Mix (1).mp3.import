@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6rrgv4a02emv"
+path="res://.godot/imported/Gaming Flute Mix (1).mp3-ed87b48fc3eef0899a4ca66f5057ef3d.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Gaming Flute Mix (1).mp3"
+dest_files=["res://.godot/imported/Gaming Flute Mix (1).mp3-ed87b48fc3eef0899a4ca66f5057ef3d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

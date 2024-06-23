@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=3 uid="uid://dwpwjjq4e2shm"]
+[gd_scene load_steps=169 format=3 uid="uid://dwpwjjq4e2shm"]
 
 [ext_resource type="Texture2D" uid="uid://c7e3aji8o3qc5" path="res://assets/textures/Bricks/Bricks089_1K-JPG_Color.jpg" id="1_72mke"]
 [ext_resource type="Script" path="res://scripts/Medieval_Town_1.gd" id="1_84x6b"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://b1iblq3sh0pvl" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_9.png" id="54_b8df2"]
 [ext_resource type="Texture2D" uid="uid://bhdqeqkdrj61a" path="res://assets/models/MedievalAssets/Streetlamp01/Streetlamp01_10.png" id="55_a4lgj"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="55_kqtcu"]
+[ext_resource type="AudioStream" uid="uid://6rrgv4a02emv" path="res://assets/music/Gaming Flute Mix (1).mp3" id="56_t7y0o"]
 [ext_resource type="Texture2D" uid="uid://u02xxodeybi2" path="res://assets/models/trashcan_Image.png" id="57_ig0wd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4dhdv"]
@@ -3125,6 +3126,10 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_eheq8")
 uppercase = true
 script = ExtResource("55_kqtcu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("56_t7y0o")
+autoplay = true
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
 [connection signal="body_entered" from="DeathArea2" to="." method="_on_death_area_body_entered"]
