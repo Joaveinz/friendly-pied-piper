@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhgbut2qmxram"]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_lg2qw"]
+[ext_resource type="Texture2D" uid="uid://co10cjeqs34kw" path="res://assets/Pied_piper.jpg" id="3_bvof0"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_rycq7"]
+
+[sub_resource type="Theme" id="Theme_v5dn0"]
+resource_local_to_scene = true
+default_font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_uifr8"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_y1jsj"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_c3uvs"]
+default_font_size = 30
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lg2qw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_bvof0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMP3_rycq7")
+autoplay = true
+
+[node name="Headline" type="Label" parent="."]
+layout_mode = 2
+offset_left = 196.0
+offset_top = 109.0
+offset_right = 2116.0
+offset_bottom = 192.0
+theme = SubResource("Theme_v5dn0")
+text = "Options
+"
+label_settings = SubResource("LabelSettings_uifr8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 918.0
+offset_top = 462.0
+offset_right = 1416.0
+offset_bottom = 539.0
+theme = SubResource("Theme_y1jsj")
+text = "Back"
+
+[node name="Volume" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 1062.0
+offset_top = 280.0
+offset_right = 1470.0
+offset_bottom = 296.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 878.0
+offset_top = 261.0
+offset_right = 988.0
+offset_bottom = 303.0
+theme = SubResource("Theme_c3uvs")
+text = "Volume"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
