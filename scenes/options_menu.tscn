@@ -1,9 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhgbut2qmxram"]
 
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_lg2qw"]
+[ext_resource type="AudioStream" uid="uid://byohjid0v3auf" path="res://assets/music/Main_Menu_Theme.mp3" id="2_h0su7"]
 [ext_resource type="Texture2D" uid="uid://co10cjeqs34kw" path="res://assets/Pied_piper.jpg" id="3_bvof0"]
-
-[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_rycq7"]
 
 [sub_resource type="Theme" id="Theme_v5dn0"]
 resource_local_to_scene = true
@@ -30,15 +29,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lg2qw")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h0su7")
+autoplay = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_bvof0")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMP3_rycq7")
-autoplay = true
 
 [node name="Headline" type="Label" parent="."]
 layout_mode = 2
