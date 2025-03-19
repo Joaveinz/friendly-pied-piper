@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0lwdukcf3yhh"
+uid="uid://bkmyivdt40odo"
 path.s3tc="res://.godot/imported/FenceWoodDoor_H04_3.png-c2d45c6d339bb19192d0ec043472481a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "69e82b867d88b73e3eb0bb711e46d765"
 }
 
 [deps]

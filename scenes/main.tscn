@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ceyjisqh08d52"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_4pmwy"]
+[ext_resource type="Script" uid="uid://bul17rr2wguuq" path="res://scripts/main.gd" id="1_4pmwy"]
 [ext_resource type="AudioStream" uid="uid://byohjid0v3auf" path="res://assets/music/Main_Menu_Theme.mp3" id="2_ls4df"]
 [ext_resource type="Texture2D" uid="uid://co10cjeqs34kw" path="res://assets/Pied_piper.jpg" id="3_8reb0"]
 

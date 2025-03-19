@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://de8ujocg0pjkp"]
 
-[ext_resource type="Script" path="res://scripts/GameWon.gd" id="1_ri81o"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="2_ltt3l"]
+[ext_resource type="Script" uid="uid://cl5jvt2tx6ny7" path="res://scripts/GameWon.gd" id="1_ri81o"]
+[ext_resource type="Script" uid="uid://bul17rr2wguuq" path="res://scripts/main.gd" id="2_ltt3l"]
 [ext_resource type="AudioStream" uid="uid://byohjid0v3auf" path="res://assets/music/Main_Menu_Theme.mp3" id="3_b14pt"]
 
 [sub_resource type="Theme" id="Theme_imovi"]
